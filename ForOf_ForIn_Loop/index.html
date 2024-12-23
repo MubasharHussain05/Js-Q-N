@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // What is difference between for of for in loop? 
+        // For of loop iterate over iterable objects (like array,string ,map,sets)
+        // and return the value of each iteration
+        // For in iterates over property of an object and return the property name.
+
+        const array = [10, 20, 30];
+for (const value of array) {
+  console.log(value); // Outputs: 10, 20, 30
+}
+
+const string = "Hello";
+for (const char of string) {
+  console.log(char); // Outputs: H, e, l, l, o
+}
+
+
+
+const object = { a: 1, b: 2, c: 3 };
+for (const key in object) {
+  console.log(key, object[key]); 
+  // Outputs: 
+  // a 1
+  // b 2
+  // c 3
+}
+
+const Array = [10, 20, 30];
+for (const index in array) {
+  console.log(index, array[index]); 
+  // Outputs: 
+  // 0 10
+  // 1 20
+  // 2 30
+}
+
+    </script>
+</body>
+</html>

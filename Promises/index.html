@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // What is Promise in Js?
+        // Promise is for eventual completion task. 
+        // It is an object in JavaScript.
+        // It is a solution of callback hell.
+
+        // It's used to handle asynchronous operations like HTTP requests, file reading, 
+        // or any operation that takes time and completes in the future. 
+        // A Promise provides a cleaner way to deal with asynchronous code than using callbacks, 
+        // especially when you need to chain multiple asynchronous operations.
+
+        // Pending: The initial state, before the operation has completed.
+        // Fulfilled: The operation completed successfully, and the promise has a result (resolved).
+        // Rejected: The operation failed, and the promise has a reason for failure (error).
+
+        // Resolve and reject are callback provided by js
+
+        const promise = new Promise((resolve, reject) => {
+        resolve("First task completed");
+        });
+
+        promise
+        .then((result) => {
+        console.log(result); // Output: First task completed
+        return "Second task completed";
+        })
+        .then((result) => {
+       console.log(result); // Output: Second task completed
+       })
+       .catch((error) => {
+       console.log("Error:", error);
+       });
+
+
+    </script>
+</body>
+</html>

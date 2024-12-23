@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // What is difference between var , let and const?
+        // Var is a function scope , let and const are block-scope.
+        // Var variable can be redeclared and updated, 
+        // while let variables can be updated but can not redeclared,
+        // and const variables can not be redeclared and updated.  
+
+        var a = 5;
+        a = 10; // Reassignment allowed
+        var a = 15; // Redeclaration allowed
+        console.log(a); // Output: 15
+
+
+    //     let b = 5;
+    //     b = 10; // Reassignment allowed
+    //     let b = 15; // SyntaxError: Identifier 'b' has already been declared
+
+    //     const c = 5;
+    //     c = 10; // TypeError: Assignment to constant variable
+    //    const c = 15; // SyntaxError: Identifier 'c' has already been declared
+
+    </script>
+</body>
+</html>

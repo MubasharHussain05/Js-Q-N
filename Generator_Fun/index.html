@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    //what is generator in javascipt? 
+
+    // A Generator in JavaScript is a special type of function that can be paused and resumed, 
+    // allowing for the creation of iterators. It is defined using the function* syntax and uses the yield keyword to pause and resume execution.
+    //  Generators provide a more efficient way to handle sequences of values,
+    //  especially when dealing with asynchronous programming, lazy evaluations, or large datasets.
+
+    function* addNumbers() {
+  const x = yield "Enter a number";
+  const y = yield "Enter another number";
+  return x + y;
+}
+
+const generator = addNumbers();
+console.log(generator.next().value); // "Enter a number"
+console.log(generator.next(5).value); // "Enter another number"
+console.log(generator.next(3).value); // 8 (5 + 3)
+
+</script>
+</body>
+</html>

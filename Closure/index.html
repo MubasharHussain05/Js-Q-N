@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // What is closure in javascipt?
+        // A closure is a function defined inside another function and has access to outer function's variable.
+        // It has access to its own scope ,the global scope and the outer function scope.
+
+        function outerFunction(outerVariable) {
+    return function innerFunction(innerVariable) {
+        console.log(`Outer Variable: ${outerVariable}`);
+        console.log(`Inner Variable: ${innerVariable}`);
+    };
+}
+
+const closureFunc = outerFunction("I am from outer scope!");
+closureFunc("I am from inner scope!");
+
+    </script>
+</body>
+</html>

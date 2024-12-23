@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // what is difference between null amd undefined?
+        // null represents the intentional obsence of any object value,while undefined represents the absence of a value, or value has not been assigned yet.  
+
+let notAssigned; // undefined (not initialized)
+let emptyValue = null; // null (explicitly assigned)
+
+console.log(typeof notAssigned); // "undefined"
+console.log(typeof emptyValue);  // "object" (quirk of JS)
+
+console.log(notAssigned == emptyValue); // true (loose equality)
+console.log(notAssigned === emptyValue); // false (strict equality)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // What is callback function?
+        // A callback function is a function pass as an argument  another function to be executed latter. it is commonly use in asynchronous
+        // programming, functional programming and event handling. 
+
+    function fetchData(callback) {
+  console.log("Fetching data...");
+  setTimeout(() => {
+    console.log("Data fetched successfully!");
+    callback(); // Execute the callback after fetching the data
+  }, 2000); // Simulates 2 seconds of delay
+}
+
+function processData() {
+  console.log("Processing data...");
+}
+
+// Passing `processData` as a callback to `fetchData`
+fetchData(processData);
+
+    </script>
+</body>
+</html>

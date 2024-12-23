@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // What is event loop?
+        // The event loop is JavaScript mechanism that handle asynchronous operations.
+        // It continuously checks the call stack and task queue,
+        // moving function from queue to stack when stack is empty
+
+        // Call Stack:
+        // The call stack is where functions are executed. JavaScript executes functions in a Last In, First Out (LIFO) order.
+        // When a function is called, it’s pushed to the top of the call stack, and when the function execution is completed, it’s popped off the stack.
+
+        // Web APIs (Browser or Node.js APIs):
+    //     These are provided by the browser (or Node.js runtime) and allow asynchronous operations, such as setTimeout, DOM events, AJAX requests, etc.
+    //     When an asynchronous operation is initiated (e.g., setTimeout or a network request), it is handled by the Web APIs and does not block the call stack.
+    //     Once the operation completes, the Web API places the callback (or event) in the callback queue.
+
+
+    // Callback Queue:
+    // This is a queue that stores callback functions that are ready to be executed once the call stack is empty.
+    // For example, when a setTimeout operation completes, the callback function is placed in the callback queue.
+
+    console.log("Start");
+
+setTimeout(() => {
+  console.log("Timeout 1");
+}, 0);
+
+setTimeout(() => {
+  console.log("Timeout 2");
+}, 0);
+
+console.log("End");
+
+// output:
+// Start
+// End
+// Timeout 1
+// Timeout 2
+
+
+    </script>
+</body>
+</html>

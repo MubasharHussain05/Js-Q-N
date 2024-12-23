@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // What is higher order function in js?
+    //     Higher order function is function that take one or more function as an arguments
+    //     return function as it result.it enables function to be used as value.
+
+    const numbers = [1, 2, 3, 4];
+const squares = numbers.map(number => number * number);
+
+console.log(squares); // [1, 4, 9, 16]
+
+
+
+const number = [1, 2, 3, 4, 5];
+const evenNumbers = numbers.filter(number => number % 2 === 0);
+
+console.log(evenNumbers); // [2, 4]
+
+    // </script>
+</body>
+</html>

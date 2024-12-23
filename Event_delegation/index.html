@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+        }
+    
+        .main-div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    
+        .g-div {
+          padding: 50px;
+          background-color: red;
+          border: 2px solid #ccc;
+        }
+    
+        .p-div {
+          padding: 30px;
+          background-color: black;
+          border: 2px solid #bbb;
+        }
+    
+        .c-div {
+          padding: 10px 20px;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          cursor: pointer;
+          border-radius: 5px;
+        }
+    
+        .c-div:hover {
+          background-color: #45a049;
+        }
+      </style>
+</head>
+<body>
+    <section class="main-div">
+        <div class="g-div" id="grandParent">
+          <div class="p-div" id="parent">
+            <button class="c-div" id="child">Child Div</button>
+          </div>
+        </div>
+      </section>
+    
+    <script>
+        // // Explain event delegation in javascript?
+        // Event delegation is technique where you can attach an event listener to a parent element instead of multiple child element.
+        // when an event occurs it bubbles up to the parent element where you can handle it based on target.
+
+
+    const grandParent = document.getElementById('grandParent');
+    const parent = document.getElementById('parent');
+    const child = document.getElementById('child');
+
+    // Handle GrandParent click
+    grandParent.addEventListener('click', () => {
+      console.log('GrandParent clicked');
+    }, true); // Using `true` for capture phase
+
+    // Handle Parent click
+    parent.addEventListener('click', () => {
+      console.log('Parent clicked');
+    }, true); // Using `true` for capture phase
+
+    // Handle Child click
+    child.addEventListener('click', (event) => {
+      console.log(event);
+      event.stopPropagation(); // Stops propagation
+      console.log('Child clicked');
+    }, true); // Using `true` for capture phase
+
+
+    </script>
+</body>
+</html>

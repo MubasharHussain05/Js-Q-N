@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Explain the difference between function declaration and function expression?
+        // Function declaration are hoisted, meaning they are available before the code executes. 
+        // Function expression are not hoisted and are available only after the reaches the line of code
+        // Where they are defined.
+       
+
+        //Function declaration
+        myFunction();  // Output: "Hello, World!"
+
+       function myFunction() {
+      console.log("Hello, World!");
+      }
+
+
+
+        // Function expression
+        const myFunction = function() {
+         console.log("Hello, World!");
+       };
+
+       myFunction();  // Output: "Hello, World!"
+
+    </script>
+</body>
+</html>

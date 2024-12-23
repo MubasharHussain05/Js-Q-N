@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // what is the async await feature in javascript?
+        // async/await is syntactic sugar for writing asynchronous code in synchronous-like manner. 
+        // async function return Promise and await can be used inside async function to pause execution until promise is resolved 
+
+        // The async/await feature in JavaScript is a way to handle asynchronous operations in a more readable 
+        // and intuitive manner compared to using promises directly or callback functions. It was introduced in ES2017 (ES8) 
+        // and allows developers to write asynchronous code that looks and behaves more like synchronous code, making it easier to understand and debug.
+
+
+
+        function fetchDataWithError() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject("Error fetching data!");
+    }, 2000);
+  });
+}
+
+async function getData() {
+  try {
+    console.log("Fetching data...");
+    const result = await fetchDataWithError(); // Pauses until promise resolves/rejects
+    console.log(result);
+  } catch (error) {
+    console.error("Error:", error); // Logs: "Error: Error fetching data!"
+  }
+}
+
+getData();
+
+    </script>
+</body>
+</html>

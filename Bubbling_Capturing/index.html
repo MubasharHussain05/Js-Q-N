@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="grandparent">
+        <div id="parent">
+          <button id="child">Click Me</button>
+        </div>
+      </div>
+      
+    
+    <script>
+        // what is bubbling and capturing phase in javascript?
+        // Event bubbling is the process where the event start at the innermost target Element
+        // and then bubble up the DOM hierarchy until it reaches the root element.
+        // Event Capturing is the oposite, where the event start at the root element and then trickles down to target element.
+
+    document.getElementById('grandparent').addEventListener(
+    'click',
+    () => {
+      console.log('Grandparent clicked (capturing)');
+    },
+    true
+  );
+
+  document.getElementById('grandparent').addEventListener('click', () => {
+    console.log('Grandparent clicked (bubbling)');
+  });
+
+  document.getElementById('child').addEventListener('click', (event) => {
+    console.log('Child clicked');
+    event.stopPropagation(); // Stops further propagation
+  });
+
+    </script>
+</body>
+</html>
